@@ -1,31 +1,18 @@
-# Grok-1
+该存储库包含用于加载和运行 Grok-1 开放权重模型的 JAX 示例代码。
 
-This repository contains JAX example code for loading and running the Grok-1 open-weights model.
+确保下载检查点并将ckpt-0目录放入checkpoint. 然后，运行
 
-Make sure to download the checkpoint and place `ckpt-0` directory in `checkpoint`.
-Then, run
-
-```shell
 pip install -r requirements.txt
 python run.py
-```
+测试代码。
 
-to test the code.
+该脚本在测试输入上加载模型中的检查点和样本。
 
-The script loads the checkpoint and samples from the model on a test input.
+由于模型规模较大（314B参数），需要有足够GPU内存的机器才能使用示例代码测试模型。该存储库中 MoE 层的实现效率不高。选择该实现是为了避免需要自定义内核来验证模型的正确性。
 
-Due to the large size of the model (314B parameters), a machine with enough GPU memory is required to test the model with the example code.
-The implementation of the MoE layer in this repository is not efficient. The implementation was chosen to avoid the need for custom kernels to validate the correctness of the model.
+下载权重
+您可以使用 torrent 客户端和此磁力链接下载权重：
 
-# Downloading the weights
-
-You can download the weights using a torrent client and this magnet link:
-```
 magnet:?xt=urn:btih:5f96d43576e3d386c9ba65b883210a393b68210e&tr=https%3A%2F%2Facademictorrents.com%2Fannounce.php&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce
-```
-
-# License
-
-The code and associated Grok-1 weights in this release are licensed under the
-Apache 2.0 license. The license only applies to the source files in this
-repository and the model weights of Grok-1.
+执照
+此版本中的代码和相关 Grok-1 权重已根据 Apache 2.0 许可证获得许可。该许可证仅适用于该存储库中的源文件和 Grok-1 的模型权重。
